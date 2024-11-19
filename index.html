@@ -5,10 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/boostrap/bootstrap.min.css">
-    <title>Document</title>
+    <title>hello</title>
 </head>
 <body>
-    
+    <div class="container">
+        <img id="image" class="rounded" width="150px" height="150px" src="/IAMGE/hok__1_.jpg" alt="">  
+        <br>
+        <button id="Prev" class="btn btn-primary px-5 rounded-pill mt-3">Prev</button>
+        <button id="Next" class="btn btn-danger px-5 rounded-pill mt-3">Next</button>
+    </div>
 </body>
-<script src="/script.js"></script>
+<script >
+    let image= ['IAMGE/hok__1_.jpg', 'IAMGE/hok__2_.jpg', 'IAMGE/hok__3_.jpg'];
+    let currenIndex=0;
+    let picture = document.getElementById('image');
+    let PrevButton =document.getElementById('Prev');
+    let NextButton =document.getElementById('Next');
+
+    PrevButton.addEventListener('click',function(){
+        currenIndex = (currenIndex - 1 + image.length) % image.length;
+        picture.src =image[currenIndex];
+    });
+    NextButton.addEventListener('click',function(){
+        currenIndex = (currenIndex + 1 + image.length) % image.length;
+        picture.src =image[currenIndex];
+    });
+
+</script>
 </html>
